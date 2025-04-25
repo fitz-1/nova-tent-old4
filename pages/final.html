@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Design - Nova Tent Project</title>
+  <link rel="stylesheet" href="https://use.typekit.net/wee2inf.css">
+  <link rel="stylesheet" href="../resources/css/global.css" />
+  <link rel="stylesheet" href="../resources/css/navbar.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../resources/css/page-style.css" />
+  <style>
+    .feature-section {
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .feature-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .feature-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .feature-content {
+      padding: 2rem;
+      flex: 1;
+    }
+    .feature-content h3 {
+      color: #333;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    .feature-content p {
+      color: #666;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .spec-card {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .spec-card h3 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    .spec-card p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+    .page-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 0 1rem;
+    }
+    .page-intro p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: #444;
+      font-size: 1.2rem;
+    }
+    .highlight-section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .highlight-item {
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .highlight-item i {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .highlight-item h4 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    .highlight-item p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .feature-grid, .specs-grid {
+        grid-template-columns: 1fr;
+      }
+      .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .feature-image {
+        height: 250px;
+      }
+    }
+    .slideshow-controls button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Slideshow Gallery Styles */
+    .gallery-section {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .slideshow-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+    .slide.active {
+      display: block;
+    }
+    .slide-caption {
+      text-align: center;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: none;
+    }
+    .slide-caption.active {
+      display: block;
+    }
+    .slideshow-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .slideshow-controls button:hover {
+      background: #555;
+    }
+    .thumbnail-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 1rem;
+    }
+    .thumbnail {
+      width: 100px;
+      height: 75px;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+      flex: 0 0 auto;
+    }
+    .thumbnail.active {
+      opacity: 1;
+      border: 2px solid #333;
+    }
+    .thumbnail-pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0 1rem;
+    }
+    .thumbnail-pagination button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .thumbnail-pagination button:hover {
+      background: #555;
+    }
+    .thumbnail-pagination button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    @media (max-width: 768px) {
+      .slide {
+        height: 300px;
+      }
+      .thumbnail-container {
+        max-width: 600px;
+      }
+      .thumbnail {
+        width: 80px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar Container -->
+  <header>
+    <div id="navbar-container"></div>
+  </header>
+
+  <!-- Hero Section with Video Background -->
+  <section class="hero">
+    <video autoplay muted loop id="bg-video">
+      <source src="../resources/media/tent_nite.MP4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <div class="video-overlay">
+      <a id="frontHeader" class="overlay-text" style="font-size: 50px; font-weight: bold;">Final Design</a>
+      <a id="frontSubtext" class="overlay-text" style="font-size: 20px;">The culmination of our design journey.</a>
+    </div>
+  </section>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container">
+      <h1>Final Design</h1>
+      
+      <div class="page-intro">
+        <p>
+          After four iterations of design, testing, and refinement, we present the Nova Tent - a revolutionary 
+          camping solution that combines innovative design, sustainable materials, and exceptional performance. 
+          This final design represents the perfect balance of form and function, ready to enhance your outdoor 
+          adventures.
+        </p>
+      </div>
+
+      <div class="feature-section">
+        <h2>Key Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <img src="../resources/media/placeholder.jpeg" alt="Advanced Structure" class="feature-image">
+            <div class="feature-content">
+              <h3>Advanced Structure</h3>
+              <p>
+                The Nova Tent features a revolutionary pole system that provides exceptional stability 
+                while remaining lightweight. Our patented connection system ensures quick and easy setup, 
+                even in challenging conditions.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <img src="../resources/media/placeholder.jpeg" alt="Sustainable Materials" class="feature-image">
+            <div class="feature-content">
+              <h3>Sustainable Materials</h3>
+              <p>
+                Built with eco-friendly materials that don't compromise on performance. The tent fabric 
+                is made from recycled materials and treated with environmentally safe waterproofing agents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-card">
+          <h3>Dimensions</h3>
+          <p>8' x 8' x 6'</p>
+          <p>Sleeps 2-3 people comfortably</p>
+        </div>
+        <div class="spec-card">
+          <h3>Weight</h3>
+          <p>4.5 lbs</p>
+          <p>Ultralight design</p>
+        </div>
+        <div class="spec-card">
+          <h3>Weather Rating</h3>
+          <p>4-Season</p>
+          <p>Wind resistant up to 50mph</p>
+        </div>
+      </div>
+
+      <div class="highlight-section">
+        <h2>Design Highlights</h2>
+        <div class="highlight-grid">
+          <div class="highlight-item">
+            <i>🏕️</i>
+            <h4>Quick Setup</h4>
+            <p>Sets up in under 5 minutes</p>
+          </div>
+          <div class="highlight-item">
+            <i>🌧️</i>
+            <h4>Weather Protection</h4>
+            <p>Advanced waterproofing system</p>
+          </div>
+          <div class="highlight-item">
+            <i>🌬️</i>
+            <h4>Ventilation</h4>
+            <p>Optimized airflow design</p>
+          </div>
+          <div class="highlight-item">
+            <i>🎒</i>
+            <h4>Portability</h4>
+            <p>Compact and lightweight</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-section">
+        <h2>Interior Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <video autoplay muted loop class="feature-image">
+              <source src="../resources/media/tent_nite.MP4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="feature-content">
+              <h3>Smart Storage</h3>
+              <p>
+                Integrated storage pockets and gear lofts keep your equipment organized and easily 
+                accessible. The interior layout maximizes usable space while maintaining comfort.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <img src="../resources/media/placeholder.jpeg" alt="Comfort Features" class="feature-image">
+            <div class="feature-content">
+              <h3>Comfort Design</h3>
+              <p>
+                Thoughtful design elements like adjustable ventilation, privacy panels, and interior 
+                lighting create a comfortable and enjoyable camping experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Section -->
+      <div class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="slideshow-container">
+          <img src="../resources/media/placeholder.jpeg" alt="Final Design Overview" class="slide active">
+          <div class="slide-caption active">Final Design Overview</div>
+          <img src="../resources/media/placeholder.jpeg" alt="Interior Features" class="slide">
+          <div class="slide-caption">Interior Features</div>
+          <img src="../resources/media/placeholder.jpeg" alt="Weather Protection" class="slide">
+          <div class="slide-caption">Weather Protection</div>
+          <img src="../resources/media/placeholder.jpeg" alt="Sustainability Features" class="slide">
+          <div class="slide-caption">Sustainability Features</div>
+          <img src="../resources/media/placeholder.jpeg" alt="Assembly Process" class="slide">
+          <div class="slide-caption">Assembly Process</div>
+        </div>
+        <div class="slideshow-controls">
+          <button onclick="prevSlide()">←</button>
+          <button onclick="nextSlide()">→</button>
+        </div>
+        <div class="thumbnail-container" id="thumbnailContainer">
+          <!-- Thumbnails will be populated by JavaScript -->
+        </div>
+        <div class="thumbnail-pagination">
+          <button onclick="prevThumbnailPage()" id="prevThumbPage">Previous</button>
+          <span id="thumbnailPageInfo">Page 1 of 1</span>
+          <button onclick="nextThumbnailPage()" id="nextThumbPage">Next</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nova Tent Project. All rights reserved.</p>
+  </footer>
+
+  <script src="../resources/js/loadNavbar.js"></script>
+  <script src="../resources/js/script.js"></script>
+  <script>
+    let currentSlide = 0;
+    let currentThumbnailPage = 0;
+    let autoScrollInterval;
+    const thumbnailsPerPage = 12;
+    const slides = document.querySelectorAll('.slide');
+    const captions = document.querySelectorAll('.slide-caption');
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+    const prevThumbPageBtn = document.getElementById('prevThumbPage');
+    const nextThumbPageBtn = document.getElementById('nextThumbPage');
+    const thumbnailPageInfo = document.getElementById('thumbnailPageInfo');
+
+    // Initialize the first slide and caption
+    slides[0].classList.add('active');
+    captions[0].classList.add('active');
+
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(nextSlide, 5000);
+    }
+
+    function pauseAutoScroll() {
+      clearInterval(autoScrollInterval);
+      setTimeout(startAutoScroll, 15000);
+    }
+
+    // Create thumbnails
+    function createThumbnails() {
+      thumbnailContainer.innerHTML = '';
+      slides.forEach((slide, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = slide.src;
+        thumbnail.alt = slide.alt;
+        thumbnail.className = 'thumbnail' + (index === currentSlide ? ' active' : '');
+        thumbnail.onclick = () => {
+          showSlide(index);
+          pauseAutoScroll();
+        };
+        thumbnailContainer.appendChild(thumbnail);
+      });
+      updateThumbnailPagination();
+    }
+
+    function updateThumbnailPagination() {
+      const totalPages = Math.ceil(slides.length / thumbnailsPerPage);
+      const startIndex = currentThumbnailPage * thumbnailsPerPage;
+      const endIndex = Math.min(startIndex + thumbnailsPerPage, slides.length);
+
+      // Show/hide thumbnails based on current page
+      const thumbnails = thumbnailContainer.querySelectorAll('.thumbnail');
+      thumbnails.forEach((thumb, index) => {
+        thumb.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
+      });
+
+      // Update pagination controls
+      prevThumbPageBtn.disabled = currentThumbnailPage === 0;
+      nextThumbPageBtn.disabled = currentThumbnailPage >= totalPages - 1;
+      thumbnailPageInfo.textContent = `Page ${currentThumbnailPage + 1} of ${totalPages}`;
+    }
+
+    function prevThumbnailPage() {
+      if (currentThumbnailPage > 0) {
+        currentThumbnailPage--;
+        updateThumbnailPagination();
+      }
+    }
+
+    function nextThumbnailPage() {
+      const totalPages = Math.ceil(slides.length / thumbnailsPerPage);
+      if (currentThumbnailPage < totalPages - 1) {
+        currentThumbnailPage++;
+        updateThumbnailPagination();
+      }
+    }
+
+    function showSlide(index) {
+      // Hide all slides and captions
+      slides.forEach(slide => slide.classList.remove('active'));
+      captions.forEach(caption => caption.classList.remove('active'));
+      
+      // Show the selected slide and caption
+      slides[index].classList.add('active');
+      captions[index].classList.add('active');
+      currentSlide = index;
+
+      // Update active thumbnail
+      const thumbnails = thumbnailContainer.querySelectorAll('.thumbnail');
+      thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+
+      // Update thumbnail page if needed
+      const newThumbnailPage = Math.floor(index / thumbnailsPerPage);
+      if (newThumbnailPage !== currentThumbnailPage) {
+        currentThumbnailPage = newThumbnailPage;
+        updateThumbnailPagination();
+      }
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+      pauseAutoScroll();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+      pauseAutoScroll();
+    }
+
+    // Initialize thumbnails and start auto-scrolling
+    createThumbnails();
+    startAutoScroll();
+  </script>
+</body>
+</html>

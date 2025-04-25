@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iterations - Nova Tent</title>
+  <link rel="stylesheet" href="https://use.typekit.net/wee2inf.css">
+  <link rel="stylesheet" href="../resources/css/global.css" />
+  <link rel="stylesheet" href="../resources/css/navbar.css" />
+  <style>
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 6rem 2rem 0;
+    }
+    .container {
+        padding-top: 80px; /* Only if you don't want to affect the whole body */
+    }
+
+    .iteration-section {
+      margin: 2rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .iteration-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .iteration-card:hover {
+      transform: translateY(-5px);
+    }
+    .iteration-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .iteration-text {
+      padding: 1.5rem;
+      background: white;
+    }
+    .iteration-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .iteration-text p {
+      margin-bottom: 1rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #555;
+    }
+    .page-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .page-intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    .page-intro p {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      width: 100%;
+    }
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 5rem 1rem 0;
+      }
+      .iteration-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .iteration-card img {
+        height: 250px;
+      }
+      .iteration-text {
+        padding: 1rem;
+      }
+      .iteration-text h3 {
+        font-size: 1.3rem;
+      }
+      .page-intro h1 {
+        font-size: 2rem;
+      }
+      .page-intro p {
+        font-size: 1rem;
+      }
+      footer {
+        margin-top: 2rem;
+        padding: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar Container -->
+  <header>
+    <div id="navbar-container"></div>
+  </header>
+
+  <div class="container">
+    <div class="page-intro">
+      <h1>The Evolution of Nova Tent</h1>
+      <p>Our journey through four distinct iterations, each building upon the lessons learned from the previous version. From initial concept to final production, follow the development of the Nova Tent as we refined its design, materials, and functionality.</p>
+    </div>
+
+    <div class="iteration-section">
+      <div class="iteration-card">
+        <img src="../resources/media/it1/it1-tent-from-back.JPG" alt="Iteration 1 - Initial Concept">
+        <div class="iteration-text">
+          <h3>Iteration 1: Foundation</h3>
+          <p>The first iteration focused on establishing the fundamental design principles and core functionality. We explored basic structure, initial material choices, and essential features that would define the Nova Tent.</p>
+          <a href="iteration1.html" class="btn">Explore Iteration 1</a>
+        </div>
+      </div>
+
+      <div class="iteration-card">
+        <img src="../resources/media/it2/it2-layindown.jpeg" alt="Iteration 2 - Design Refinement">
+        <div class="iteration-text">
+          <h3>Iteration 2: Refinement</h3>
+          <p>Building on our initial concept, we refined the design, improved material selection, and enhanced structural components. This iteration addressed early challenges and introduced key improvements.</p>
+          <a href="iteration2.html" class="btn">Explore Iteration 2</a>
+        </div>
+      </div>
+
+      <div class="iteration-card">
+        <img src="../resources/media/it3/lake-powell-red.JPG" alt="Iteration 3 - User Experience">
+        <div class="iteration-text">
+          <h3>Iteration 3: User Experience</h3>
+          <p>Focusing on comfort and usability, this iteration introduced interior improvements, enhanced ventilation, and sustainable material choices. We prioritized user feedback and environmental performance.</p>
+          <a href="iteration3.html" class="btn">Explore Iteration 3</a>
+        </div>
+      </div>
+
+      <div class="iteration-card">
+        <img src="../resources/media/placeholder.jpeg" alt="Iteration 4 - Production Ready">
+        <div class="iteration-text">
+          <h3>Iteration 4: Production Ready</h3>
+          <p>The final iteration brought together all our learnings to create a production-ready design. We optimized manufacturing processes, conducted comprehensive testing, and prepared for market launch.</p>
+          <a href="iteration4.html" class="btn">Explore Iteration 4</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nova Tent Project. All rights reserved.</p>
+  </footer>
+
+  <script src="../resources/js/loadNavbar.js"></script>
+</body>
+</html>

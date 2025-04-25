@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iteration 1 - Nova Tent Project</title>
+  <link rel="stylesheet" href="https://use.typekit.net/wee2inf.css">
+  <link rel="stylesheet" href="../resources/css/global.css" />
+  <link rel="stylesheet" href="../resources/css/navbar.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../resources/css/page-style.css" />
+  <link rel="stylesheet" href="../resources/css/iterationStyles.css" />
+</head>
+<body>
+  <!-- Navigation Bar Container -->
+  <header>
+    <div id="navbar-container"></div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="page-content">
+    <div class="container">
+      <h1>Iteration 1</h1>
+      
+      <div class="page-intro">
+        <p>
+          Our first iteration focused on establishing the conceptual design and early construction techniques 
+          for the Nova Tent. This phase laid the groundwork for all subsequent developments.
+        </p>
+      </div>
+
+      <div class="iteration-section">
+        <h2>Goals and Objectives</h2>
+        <p>
+          In this initial phase, we aimed to:
+        </p>
+        <ul>
+          <li>Pole Structure</li>
+          <li>Tent Dimensions</li>
+          <li>Clip Placement</li>
+          <li>Paper Patterning Basics</li>
+          <li>Lighting System</li>
+        </ul>
+      </div>
+
+      <div class="iteration-grid">
+        <div class="iteration-card">
+          <img src="../resources/media/it1/it1-PaperPatterning2.JPG" alt="Patterning" class="iteration-image">
+          <div class="iteration-content">
+            <h3>Patterning</h3>
+            <p>
+              The design process began with low fidelity paper patterning, where we we simply formed the structure of
+              the tent on paper by draping it onto the poles, then tracing the pattern onto the fabric.
+            </p>
+          </div>
+        </div>
+
+        <div class="iteration-card">
+          <img src="../resources/media/it1/it1-structureInHallway.JPG" alt="Poles" class="iteration-image">
+          <div class="iteration-content">
+            <h3>Poles</h3>
+            <p>
+              Our pole system was carefully designed to provide structural integrity while maintaining 
+              ease of assembly. We tested various pole configurations to achieve the 
+              perfect balance of strength and functionality.
+            </p>
+          </div>
+        </div>
+
+        <div class="iteration-card">
+          <img src="../resources/media/it1/it1-sewing.JPG" alt="Sewing" class="iteration-image">
+          <div class="iteration-content">
+            <h3>Sewing</h3>
+            <p>
+              The sewing process focused on creating strong, durable seams. We considered multiple thread types
+              and fabric types, ultimately deciding on polyester based on its water resistance and durability.
+            </p>
+          </div>
+        </div>
+
+        <div class="iteration-card">
+          <img src="../resources/media/it1/it1-lighting-test.JPG" alt="Lighting" class="iteration-image">
+          <div class="iteration-content">
+            <h3>Lighting</h3>
+            <p>
+              We experimented with various lighting types, including LED and COB LED strips,
+              EL Wire and fairy lights. Ultimately, we decided to use fairy lights due to their
+              low power consumption, flexibility, and functional ambient glow.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="iteration-section">
+        <h2>Challenges Faced</h2>
+        <p>
+          Several key challenges emerged during this iteration:
+        </p>
+        <ul>
+          <li>Patterning technique not viable for future iterations.</li>
+          <li>Sewing was more difficult than expected due to using a non-standard fabric given to us.</li>
+          <li>Pinning in fabric on finished iteration was more difficult and less insightful than expected.</li>
+          <li>Determining best possible path for lighting integration for one continuous light strip.</li>
+          <li>Maintaining symmetry was difficult due to only using hand tools.</li>
+          <li>Unsure on whether brow pole pattern should have concave or convex shape.</li>
+          <li>Finished iteration was air tight with no windows or doors, making it difficult to see inside.</li>
+        </ul>
+      </div>
+
+      <div class="iteration-section">
+        <h2>Key Learnings</h2>
+        <p>
+          This iteration provided valuable insights that shaped our future development:
+        </p>
+        <ul>
+          <li>Tent is not wide enough to fit two people comfortably.</li>
+          <li>Draping method will not work for a tent, but rather a rainfly.</li>
+          <li>Trim final pole in sequence to move vertical position and angle of brow pole.</li>
+          <li>Sewing order of operations established.</li>
+          <li>Fairy lights are plenty bright enough and can handle adverse weather conditions (cold).</li>
+        </ul>
+      </div>
+
+      <!-- Results Section -->
+      <div class="iteration-section">
+        <h2>Results</h2>
+        <div class="results-video-container">
+          <video autoplay muted loop playsinline class="results-video">
+            <source src="../resources/media/it1/videos/it1-noFront.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+      </div>
+
+      <!-- Gallery Section -->
+      <div class="gallery-section">
+        <h2>Gallery</h2>
+        <div class="slideshow-wrapper">
+          <button onclick="prevSlide()" class="slideshow-controls">←</button>
+          <div class="slideshow-container">
+            <img src="../resources/media/it1/it1-paperPatterning3.JPG" alt="Paper Patterning Process" class="slide active">
+            <div class="slide-caption active">Initial paper patterning for tent design</div>
+            
+            <img src="../resources/media/it1/it1-PaperPatterning2.JPG" alt="Paper Pattern Development" class="slide">
+            <div class="slide-caption">Refining the paper pattern design</div>
+            
+            <img src="../resources/media/it1/it1-paperPatterning.JPG" alt="Pattern Testing" class="slide">
+            <div class="slide-caption">Testing the paper pattern layout</div>
+            
+            <img src="../resources/media/it1/it1-prone.JPG" alt="Tent Structure Testing" class="slide">
+            <div class="slide-caption">Testing the tent structure in prone position</div>
+            
+            <img src="../resources/media/it1/it1-webbingCornerReinforcement.JPG" alt="Corner Reinforcement" class="slide">
+            <div class="slide-caption">Webbing corner reinforcement implementation</div>
+            
+            <img src="../resources/media/it1/it1-clipsMarked.JPG" alt="Clip Placement" class="slide">
+            <div class="slide-caption">Marking clip placement points</div>
+            
+            <img src="../resources/media/it1/it1-structureInHallway.JPG" alt="Structure Assembly" class="slide">
+            <div class="slide-caption">Initial structure assembly in hallway</div>
+            
+            <img src="../resources/media/it1/it1-bendingBrowPole2.jpg" alt="Brow Pole Testing" class="slide">
+            <div class="slide-caption">Testing brow pole flexibility</div>
+            
+            <img src="../resources/media/it1/it1-frontPoleView.JPG" alt="Front Pole Structure" class="slide">
+            <div class="slide-caption">Front pole structure implementation</div>
+            
+            <img src="../resources/media/it1/it1-poleBunch.JPG" alt="Pole Organization" class="slide">
+            <div class="slide-caption">Organizing pole components</div>
+            
+            <img src="../resources/media/it1/it1-104poles.JPG" alt="Pole Collection" class="slide">
+            <div class="slide-caption">Complete pole collection for structure</div>
+            
+            <img src="../resources/media/it1/it1-emptypoles.JPG" alt="Pole Preparation" class="slide">
+            <div class="slide-caption">Preparing poles for assembly</div>
+            
+            <img src="../resources/media/it1/it1-browpole-fabric.JPG" alt="Brow Pole Fabric Integration" class="slide">
+            <div class="slide-caption">Integrating brow pole with fabric</div>
+            
+            <img src="../resources/media/it1/it1-feet-in-poles.JPG" alt="Pole Feet Installation" class="slide">
+            <div class="slide-caption">Installing pole feet components</div>
+            
+            <img src="../resources/media/it1/it1-webbingbase.JPG" alt="Webbing Base" class="slide">
+            <div class="slide-caption">Webbing base structure implementation</div>
+            
+            <img src="../resources/media/it1/it1-lighting-test.JPG" alt="Lighting Test" class="slide">
+            <div class="slide-caption">Testing interior lighting solutions</div>
+            
+            <img src="../resources/media/it1/it1-poles.jpeg" alt="Pole Components" class="slide">
+            <div class="slide-caption">Individual pole components</div>
+            
+            <img src="../resources/media/it1/it1-escape-clip-plan-2.JPG" alt="Clip Plan" class="slide">
+            <div class="slide-caption">Escape clip placement planning</div>
+            
+            <img src="../resources/media/it1/it1-eclipseE-clipplan-2.JPG" alt="Clip System Design" class="slide">
+            <div class="slide-caption">Eclipse clip system design</div>
+            
+            <img src="../resources/media/it1/it1-bendingBrowPole.JPG" alt="Brow Pole Testing" class="slide">
+            <div class="slide-caption">Additional brow pole flexibility testing</div>
+            
+            <img src="../resources/media/it1/it1-paper-pattern.JPG" alt="Paper Pattern" class="slide">
+            <div class="slide-caption">Final paper pattern design</div>
+            
+            <img src="../resources/media/it1/it1-pattern-on-fabric.JPG" alt="Pattern Transfer" class="slide">
+            <div class="slide-caption">Transferring pattern to fabric</div>
+            
+            <img src="../resources/media/it1/it1-cutout.JPG" alt="Fabric Cutting" class="slide">
+            <div class="slide-caption">Cutting fabric components</div>
+            
+            <img src="../resources/media/it1/it1-L-R-sides.JPG" alt="Side Components" class="slide">
+            <div class="slide-caption">Left and right side components</div>
+            
+            <img src="../resources/media/it1/it1-pattern-matching.JPG" alt="Pattern Matching" class="slide">
+            <div class="slide-caption">Matching pattern components</div>
+            
+            <img src="../resources/media/it1/it1-labels.JPG" alt="Component Labeling" class="slide">
+            <div class="slide-caption">Labeling fabric components</div>
+            
+            <img src="../resources/media/it1/it1-pattern-cut.JPG" alt="Pattern Cutting" class="slide">
+            <div class="slide-caption">Cutting pattern components</div>
+            
+            <img src="../resources/media/it1/it1-patterning.JPG" alt="Pattern Development" class="slide">
+            <div class="slide-caption">Developing pattern components</div>
+            
+            <img src="../resources/media/it1/it1-sewing.JPG" alt="Sewing Process" class="slide">
+            <div class="slide-caption">Sewing fabric components</div>
+            
+            <img src="../resources/media/it1/it1-clips-on.JPG" alt="Clip Installation" class="slide">
+            <div class="slide-caption">Installing clip components</div>
+            
+            <img src="../resources/media/it1/it1-mid-progress.JPG" alt="Construction Progress" class="slide">
+            <div class="slide-caption">Mid-construction progress</div>
+            
+            <img src="../resources/media/it1/it1-no-floor.JPG" alt="Structure Without Floor" class="slide">
+            <div class="slide-caption">Structure without floor component</div>
+            
+            <img src="../resources/media/it1/it1-tent-no-front.JPG" alt="Structure Without Front" class="slide">
+            <div class="slide-caption">Structure without front component</div>
+            
+            <img src="../resources/media/it1/it1-tent-from-back.JPG" alt="Back View" class="slide">
+            <div class="slide-caption">Back view of tent structure</div>
+          </div>
+          <button onclick="nextSlide()" class="slideshow-controls">→</button>
+        </div>
+        <div class="thumbnail-container" id="thumbnailContainer">
+          <!-- Thumbnails will be populated by JavaScript -->
+        </div>
+        <div class="thumbnail-pagination">
+          <button onclick="prevThumbnailPage()" id="prevThumbPage">Previous</button>
+          <span id="thumbnailPageInfo">Page 1 of 1</span>
+          <button onclick="nextThumbnailPage()" id="nextThumbPage">Next</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>2025 Nova Tent Project. All rights reserved.</p>
+  </footer>
+
+  <script src="../resources/js/loadNavbar.js"></script>
+  <script src="../resources/js/script.js"></script>
+  <script>
+    let currentSlide = 0;
+    let currentThumbnailPage = 0;
+    let autoScrollInterval;
+    let isPaused = false;
+    const thumbnailsPerPage = 12; // Number of thumbnails to show per page
+    const slides = document.querySelectorAll('.slide');
+    const captions = document.querySelectorAll('.slide-caption');
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+    const prevThumbPageBtn = document.getElementById('prevThumbPage');
+    const nextThumbPageBtn = document.getElementById('nextThumbPage');
+    const thumbnailPageInfo = document.getElementById('thumbnailPageInfo');
+
+    // Initialize the first slide and caption
+    slides[0].classList.add('active');
+    captions[0].classList.add('active');
+
+    function startAutoScroll() {
+      if (!isPaused) {
+        autoScrollInterval = setInterval(nextSlide, 4000);
+      }
+    }
+
+    function pauseAutoScroll() {
+      isPaused = true;
+      clearInterval(autoScrollInterval);
+      setTimeout(() => {
+        isPaused = false;
+        startAutoScroll();
+      }, 15000);
+    }
+
+    // Create thumbnails
+    function createThumbnails() {
+      thumbnailContainer.innerHTML = '';
+      slides.forEach((slide, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = slide.src;
+        thumbnail.alt = slide.alt;
+        thumbnail.className = 'thumbnail' + (index === currentSlide ? ' active' : '');
+        thumbnail.onclick = () => {
+          showSlide(index);
+          pauseAutoScroll();
+        };
+        thumbnailContainer.appendChild(thumbnail);
+      });
+      updateThumbnailPagination();
+    }
+
+    function updateThumbnailPagination() {
+      const totalPages = Math.ceil(slides.length / thumbnailsPerPage);
+      const startIndex = currentThumbnailPage * thumbnailsPerPage;
+      const endIndex = Math.min(startIndex + thumbnailsPerPage, slides.length);
+
+      // Show/hide thumbnails based on current page
+      const thumbnails = thumbnailContainer.querySelectorAll('.thumbnail');
+      thumbnails.forEach((thumb, index) => {
+        thumb.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
+      });
+
+      // Update pagination controls
+      prevThumbPageBtn.disabled = currentThumbnailPage === 0;
+      nextThumbPageBtn.disabled = currentThumbnailPage >= totalPages - 1;
+      thumbnailPageInfo.textContent = `Page ${currentThumbnailPage + 1} of ${totalPages}`;
+    }
+
+    function prevThumbnailPage() {
+      if (currentThumbnailPage > 0) {
+        currentThumbnailPage--;
+        updateThumbnailPagination();
+      }
+    }
+
+    function nextThumbnailPage() {
+      const totalPages = Math.ceil(slides.length / thumbnailsPerPage);
+      if (currentThumbnailPage < totalPages - 1) {
+        currentThumbnailPage++;
+        updateThumbnailPagination();
+      }
+    }
+
+    function showSlide(index) {
+      // Hide all slides and captions
+      slides.forEach(slide => slide.classList.remove('active'));
+      captions.forEach(caption => caption.classList.remove('active'));
+      
+      // Show the selected slide and caption
+      slides[index].classList.add('active');
+      captions[index].classList.add('active');
+      currentSlide = index;
+
+      // Update active thumbnail
+      const thumbnails = thumbnailContainer.querySelectorAll('.thumbnail');
+      thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+
+      // Update thumbnail page if needed
+      const newThumbnailPage = Math.floor(index / thumbnailsPerPage);
+      if (newThumbnailPage !== currentThumbnailPage) {
+        currentThumbnailPage = newThumbnailPage;
+        updateThumbnailPagination();
+      }
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+      pauseAutoScroll();
+    }
+
+    // Initialize thumbnails and start auto-scrolling
+    createThumbnails();
+    startAutoScroll();
+  </script>
+</body>
+</html> 
