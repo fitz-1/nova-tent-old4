@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../resources/css/navbar.css" />
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../resources/css/page-style.css" />
+  <link rel="stylesheet" href="../resources/css/gallery.css" />
   <style>
     .feature-section {
       margin-bottom: 3rem;
@@ -140,113 +141,6 @@
       align-items: center;
       justify-content: center;
     }
-    /* Slideshow Gallery Styles */
-    .gallery-section {
-      margin: 3rem 0;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .slideshow-container {
-      position: relative;
-      max-width: 1000px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-    .slide {
-      display: none;
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-    }
-    .slide.active {
-      display: block;
-    }
-    .slide-caption {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      display: none;
-    }
-    .slide-caption.active {
-      display: block;
-    }
-    .slideshow-controls {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .slideshow-controls button:hover {
-      background: #555;
-    }
-    .thumbnail-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 1rem;
-    }
-    .thumbnail {
-      width: 100px;
-      height: 75px;
-      object-fit: cover;
-      border-radius: 4px;
-      cursor: pointer;
-      opacity: 0.6;
-      transition: opacity 0.3s;
-      flex: 0 0 auto;
-    }
-    .thumbnail.active {
-      opacity: 1;
-      border: 2px solid #333;
-    }
-    .thumbnail-pagination {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      padding: 0 1rem;
-    }
-    .thumbnail-pagination button {
-      background: #333;
-      color: white;
-      border: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .thumbnail-pagination button:hover {
-      background: #555;
-    }
-    .thumbnail-pagination button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    @media (max-width: 768px) {
-      .slide {
-        height: 300px;
-      }
-      .thumbnail-container {
-        max-width: 600px;
-      }
-      .thumbnail {
-        width: 80px;
-        height: 60px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -306,6 +200,19 @@
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="feature-section">
+        <h2>Product Video</h2>
+        <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2rem 0;">
+          <iframe 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
 
@@ -386,21 +293,21 @@
       <!-- Gallery Section -->
       <div class="gallery-section">
         <h2>Gallery</h2>
-        <div class="slideshow-container">
-          <img src="../resources/media/placeholder.jpeg" alt="Final Design Overview" class="slide active">
-          <div class="slide-caption active">Final Design Overview</div>
-          <img src="../resources/media/placeholder.jpeg" alt="Interior Features" class="slide">
-          <div class="slide-caption">Interior Features</div>
-          <img src="../resources/media/placeholder.jpeg" alt="Weather Protection" class="slide">
-          <div class="slide-caption">Weather Protection</div>
-          <img src="../resources/media/placeholder.jpeg" alt="Sustainability Features" class="slide">
-          <div class="slide-caption">Sustainability Features</div>
-          <img src="../resources/media/placeholder.jpeg" alt="Assembly Process" class="slide">
-          <div class="slide-caption">Assembly Process</div>
-        </div>
-        <div class="slideshow-controls">
-          <button onclick="prevSlide()">←</button>
-          <button onclick="nextSlide()">→</button>
+        <div class="slideshow-wrapper">
+          <button onclick="prevSlide()" class="slideshow-controls">←</button>
+          <div class="slideshow-container">
+            <img src="../resources/media/placeholder.jpeg" alt="Final Design Overview" class="slide active">
+            <div class="slide-caption active">Final Design Overview</div>
+            <img src="../resources/media/placeholder.jpeg" alt="Interior Features" class="slide">
+            <div class="slide-caption">Interior Features</div>
+            <img src="../resources/media/placeholder.jpeg" alt="Weather Protection" class="slide">
+            <div class="slide-caption">Weather Protection</div>
+            <img src="../resources/media/placeholder.jpeg" alt="Sustainability Features" class="slide">
+            <div class="slide-caption">Sustainability Features</div>
+            <img src="../resources/media/placeholder.jpeg" alt="Assembly Process" class="slide">
+            <div class="slide-caption">Assembly Process</div>
+          </div>
+          <button onclick="nextSlide()" class="slideshow-controls">→</button>
         </div>
         <div class="thumbnail-container" id="thumbnailContainer">
           <!-- Thumbnails will be populated by JavaScript -->

@@ -1,0 +1,163 @@
+/* Slideshow Gallery Styles */
+.gallery-section {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slideshow-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 3/4;
+  background: #f0f0f0;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f0f0f0;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-caption {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: none;
+}
+
+.slide-caption.active {
+  display: block;
+}
+
+.slideshow-controls {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.slideshow-controls:hover {
+  background: #555;
+}
+
+.thumbnail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1rem auto;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.thumbnail {
+  width: 70px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  flex: 0 0 auto;
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border: 2px solid #333;
+}
+
+.thumbnail-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem auto;
+  padding: 0 1rem;
+  max-width: 500px;
+}
+
+.thumbnail-pagination button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.thumbnail-pagination button:hover {
+  background: #555;
+}
+
+.thumbnail-pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .slideshow-wrapper {
+    max-width: 400px;
+  }
+  
+  .slideshow-container {
+    max-width: 350px;
+    aspect-ratio: 3/4;
+  }
+  
+  .slideshow-controls {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .thumbnail-container {
+    max-width: 350px;
+  }
+  
+  .thumbnail {
+    width: 50px;
+    height: 37px;
+  }
+  
+  .thumbnail-pagination {
+    max-width: 350px;
+  }
+} 
