@@ -11,68 +11,6 @@
   <link rel="stylesheet" href="../resources/css/page-style.css" />
   <link rel="stylesheet" href="../resources/css/iterationStyles.css" />
   <link rel="stylesheet" href="../resources/css/gallery.css" />
-  <style>
-    .iteration-section {
-      margin-bottom: 3rem;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .iteration-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    .iteration-card {
-      background: #f8f9fa;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      display: flex;
-      flex-direction: column;
-    }
-    .iteration-image {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-    .iteration-content {
-      padding: 2rem;
-      flex: 1;
-    }
-    .iteration-content h3 {
-      color: #333;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-    .iteration-content p {
-      color: #666;
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-    .page-intro {
-      text-align: center;
-      margin-bottom: 3rem;
-      padding: 0 1rem;
-    }
-    .page-intro p {
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-      color: #444;
-      font-size: 1.2rem;
-    }
-    @media (max-width: 768px) {
-      .iteration-grid {
-        grid-template-columns: 1fr;
-      }
-      .iteration-image {
-        height: 250px;
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- Navigation Bar Container -->
@@ -162,7 +100,7 @@
       <div class="gallery-section">
         <h2>Gallery</h2>
         <div class="slideshow-wrapper">
-          <button onclick="prevSlide()" class="slideshow-controls">←</button>
+          <button class="slideshow-controls">←</button>
           <div class="slideshow-container">
             <img src="../resources/media/it4/Junction.JPG" alt="Junction Detail" class="slide active">
             <div class="slide-caption active">Junction Detail</div>
@@ -224,15 +162,15 @@
             <img src="../resources/media/it4/MeshPocket.JPG" alt="Mesh Pocket" class="slide">
             <div class="slide-caption">Mesh Pocket</div>
           </div>
-          <button onclick="nextSlide()" class="slideshow-controls">→</button>
+          <button class="slideshow-controls">→</button>
         </div>
         <div class="thumbnail-container" id="thumbnailContainer">
           <!-- Thumbnails will be populated by JavaScript -->
         </div>
         <div class="thumbnail-pagination">
-          <button onclick="prevThumbnailPage()" id="prevThumbPage">Previous</button>
+          <button id="prevThumbPage">Previous</button>
           <span id="thumbnailPageInfo">Page 1 of 1</span>
-          <button onclick="nextThumbnailPage()" id="nextThumbPage">Next</button>
+          <button id="nextThumbPage">Next</button>
         </div>
       </div>
     </div>
