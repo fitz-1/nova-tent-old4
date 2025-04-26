@@ -27,20 +27,6 @@
     height: 100%;
     object-fit: cover;
   }
-  .video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding-right: 10%;
-    padding-top: 25%;
-    background: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
-  }
   .overlay-icon {
     position: absolute;
     font-size: 2rem;
@@ -49,39 +35,6 @@
     border-radius: 50%;
     transition: transform 0.2s;
     top: 10%;
-  }
-  .overlay-text {
-    position: relative;
-    padding: 0.5rem;
-    transition: transform 0.2s;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 300;
-    line-height: 1.2;
-    margin: 0;
-    text-align: right;
-    width: 100%;
-    max-width: 600px;
-  }
-  #frontHeader {
-    font-size: 4.5rem;
-    font-weight: 300;
-    color: #fff;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    line-height: 1.1;
-  }
-  #frontSubtext {
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    line-height: 1.4;
-    margin-top: 0.5rem;
   }
   .overlay-icon:hover {
     transform: scale(1.1);

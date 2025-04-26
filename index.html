@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/wee2inf.css">
   <link rel="stylesheet" href="resources/css/global.css" />
   <link rel="stylesheet" href="resources/css/navbar.css" />
+  <link rel="stylesheet" href="resources/css/video-overlay.css" />
   <link rel="stylesheet" href="style.css" />
   <style>
     .container {
@@ -71,55 +72,6 @@
       height: 100%;
       object-fit: cover;
     }
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.3);
-    }
-    .overlay-logo {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      width: min(200px, 15vw);
-      height: auto;
-    }
-    .overlay-content {
-      position: absolute;
-      right: 2rem;
-      top: 45%;
-      transform: translateY(-50%);
-      text-align: right;
-    }
-    .overlay-text {
-      display: block;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      white-space: nowrap;
-    }
-    #frontHeader {
-      font-size: min(2rem, 4vw);
-      font-weight: bold;
-      display: inline-block;
-      white-space: nowrap;
-    }
-    #frontSubtext {
-      font-size: min(1.1rem, 2vw);
-      display: inline-block;
-      white-space: nowrap;
-    }
-    .hero-text h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-      white-space: nowrap;
-    }
     @media (max-width: 768px) {
       .container {
         padding: 0 1rem;
@@ -142,25 +94,6 @@
         padding: 1rem;
         gap: 0.5rem;
       }
-      .hero-text h1 {
-        font-size: 2.5rem;
-        line-height: 1.2;
-        white-space: nowrap;
-      }
-      .overlay-content {
-        right: 1rem;
-      }
-      #frontHeader {
-        font-size: min(2rem, 4vw);
-      }
-      #frontSubtext {
-        font-size: min(0.9rem, 1.8vw);
-      }
-      .overlay-logo {
-        width: min(150px, 20vw);
-        top: 1.5rem;
-        right: 1.5rem;
-      }
     }
     @media (max-width: 480px) {
       .image-card img {
@@ -171,17 +104,6 @@
       }
       .photo-gallery {
         grid-template-columns: 1fr;
-      }
-      .overlay-logo {
-        width: min(120px, 25vw);
-        top: 1rem;
-        right: 1rem;
-      }
-      #frontHeader {
-        font-size: min(1.2rem, 2.5vw);
-      }
-      #frontSubtext {
-        font-size: min(0.8rem, 1.6vw);
       }
     }
   </style>
@@ -201,8 +123,8 @@
     <div class="video-overlay">
       <img src="resources/media/NovaLogoWhite1.png" alt="NOVA Tent Logo" class="overlay-logo">
       <div class="overlay-content">
-        <a id="frontHeader" class="overlay-text">Brighter and Better.</a>
-        <a id="frontSubtext" class="overlay-text">Revolutionizing the camping experience.</a>
+        <span class="overlay-text overlay-header">Brighter and Better.</span>
+        <span class="overlay-text overlay-subtext">Revolutionizing the camping experience.</span>
       </div>
     </div>
     <div class="hero-text">
