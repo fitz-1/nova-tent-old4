@@ -5,22 +5,18 @@
     <img href="../../index.html" src="../resources/media/NovaTentLogo_NoText.png" alt="NOVA Tent Logo" class="nav-logo">
     <a href="../../index.html">NOVA Tent</a>
   </div>
+  <div class="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <ul class="nav-links">
     <li><a href="../index.html">Home</a></li>
     <li class="dropdown">
       <a href="#">Documentation</a>
       <ul class="dropdown-menu">
-        <li><a href="../pages/overview.html">Overview</a></li>
         <li><a href="../pages/materials-testing.html">Materials Testing</a></li>
-        <li class="dropdown iterations">
-          <a href="../pages/iterations.html">Iterations</a>
-          <ul class="iteration-menu">
-            <li><a href="../pages/iteration1.html">Iteration 1</a></li>
-            <li><a href="../pages/iteration2.html">Iteration 2</a></li>
-            <li><a href="../pages/iteration3.html">Iteration 3</a></li>
-            <li><a href="../pages/iteration4.html">Iteration 4</a></li>
-          </ul>
-        </li>
+        <li><a href="../pages/iterations.html">Iterations</a></li>
         <li><a href="../pages/final.html">Final Design</a></li>
       </ul>
     </li>
@@ -33,4 +29,37 @@
       </ul>
     </li>
   </ul>
-</nav> 
+</nav>
+
+<script>
+  // Mobile menu functionality
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+  });
+
+  // Handle dropdowns on mobile
+  dropdowns.forEach(dropdown => {
+    const dropdownLink = dropdown.querySelector('a');
+    
+    dropdownLink.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+      }
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+      menuBtn.classList.remove('active');
+      dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+    }
+  });
+</script> 

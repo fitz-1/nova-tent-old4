@@ -42,6 +42,50 @@ function loadNavbar() {
         container.innerHTML = html;
         // Fix relative links based on current page location
         fixRelativeLinks();
+        
+        // Add mobile menu functionality after navbar is loaded
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        if (menuBtn) {
+          menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+          });
+
+          // Handle dropdowns on mobile
+          dropdowns.forEach(dropdown => {
+            const dropdownLink = dropdown.querySelector('a');
+            
+            dropdownLink.addEventListener('click', (e) => {
+              if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+              }
+            });
+
+            // Handle clicks on dropdown menu items
+            const dropdownItems = dropdown.querySelectorAll('.dropdown-menu a, .iteration-menu a');
+            dropdownItems.forEach(item => {
+              item.addEventListener('click', (e) => {
+                // Close the mobile menu when a link is clicked
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('active');
+                dropdowns.forEach(d => d.classList.remove('active'));
+              });
+            });
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+              navLinks.classList.remove('active');
+              menuBtn.classList.remove('active');
+              dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+            }
+          });
+        }
       } else {
         console.error('Navbar container not found after creation');
       }
