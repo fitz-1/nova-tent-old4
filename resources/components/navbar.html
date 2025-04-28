@@ -16,7 +16,15 @@
       <a href="#">Documentation</a>
       <ul class="dropdown-menu">
         <li><a href="../pages/materials-testing.html">Materials Testing</a></li>
-        <li><a href="../pages/iterations.html">Iterations</a></li>
+        <li class="dropdown iterations">
+          <a href="#">Iterations</a>
+          <ul class="iteration-menu">
+            <li><a href="../pages/iteration1.html">Iteration 1</a></li>
+            <li><a href="../pages/iteration2.html">Iteration 2</a></li>
+            <li><a href="../pages/iteration3.html">Iteration 3</a></li>
+            <li><a href="../pages/iteration4.html">Iteration 4</a></li>
+          </ul>
+        </li>
         <li><a href="../pages/final.html">Final Design</a></li>
       </ul>
     </li>
@@ -36,6 +44,7 @@
   const menuBtn = document.querySelector('.menu-btn');
   const navLinks = document.querySelector('.nav-links');
   const dropdowns = document.querySelectorAll('.dropdown');
+  const iterationsDropdown = document.querySelector('.iterations');
 
   menuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
@@ -53,6 +62,17 @@
       }
     });
   });
+
+  // Handle iterations dropdown specifically
+  if (iterationsDropdown) {
+    const iterationsLink = iterationsDropdown.querySelector('a');
+    iterationsLink.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        iterationsDropdown.classList.toggle('active');
+      }
+    });
+  }
 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
