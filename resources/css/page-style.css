@@ -107,7 +107,6 @@ blockquote footer {
   object-fit: cover;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  order: -1; /* This will move the image to the top */
 }
 
 .creator-text {
@@ -131,7 +130,9 @@ blockquote footer {
   font-size: 1rem;
   line-height: 1.6;
   color: #444;
-  text-align: left;
+  text-align: justify;
+  width: 85%;
+  margin: 0 auto;
 }
 
 /* Footer Styles */
@@ -348,5 +349,6 @@ footer {
   .creator-bio {
     font-size: 0.9rem;
     line-height: 1.5;
+    width: 85%;
   }
 } 
