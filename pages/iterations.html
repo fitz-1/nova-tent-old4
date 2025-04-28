@@ -29,18 +29,28 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: white;
     }
     .iteration-card:hover {
       transform: translateY(-5px);
     }
     .iteration-card img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
+      padding: 1rem;
+      background: white;
     }
     .iteration-text {
       padding: 1.5rem;
       background: white;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #eee;
     }
     .iteration-text h3 {
       font-size: 1.5rem;
@@ -51,6 +61,7 @@
       margin-bottom: 1rem;
       color: #666;
       line-height: 1.6;
+      flex: 1;
     }
     .btn {
       display: inline-block;
@@ -60,6 +71,8 @@
       text-decoration: none;
       border-radius: 4px;
       transition: background 0.3s;
+      margin-top: auto;
+      align-self: flex-start;
     }
     .btn:hover {
       background: #555;
@@ -148,7 +161,7 @@
         <img src="../resources/media/it2/it2-layindown.jpeg" alt="Iteration 2 - Design Refinement">
         <div class="iteration-text">
           <h3>Iteration 2: Refinement</h3>
-          <p>Building on our initial concept, we refined the design, improved material selection, and enhanced structural components. This iteration addressed early challenges and introduced key improvements.</p>
+          <p>Developing digital patterns and bringing unique features to life.</p>
           <a href="iteration2.html" class="btn">Explore Iteration 2</a>
         </div>
       </div>
@@ -157,7 +170,7 @@
         <img src="../resources/media/it3/lake-powell-red.JPG" alt="Iteration 3 - User Experience">
         <div class="iteration-text">
           <h3>Iteration 3: User Experience</h3>
-          <p>Focusing on comfort and usability, this iteration introduced interior improvements, enhanced ventilation, and sustainable material choices. We prioritized user feedback and environmental performance.</p>
+          <p>Refining design, features, and functionality.</p>
           <a href="iteration3.html" class="btn">Explore Iteration 3</a>
         </div>
       </div>
@@ -166,7 +179,7 @@
         <img src="../resources/media/placeholder.jpeg" alt="Iteration 4 - Production Ready">
         <div class="iteration-text">
           <h3>Iteration 4: Production Ready</h3>
-          <p>The final iteration brought together all our learnings to create a production-ready design. We optimized manufacturing processes, conducted comprehensive testing, and prepared for market launch.</p>
+          <p>Perfecting design and producing a polished product.</p>
           <a href="iteration4.html" class="btn">Explore Iteration 4</a>
         </div>
       </div>

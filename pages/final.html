@@ -142,6 +142,53 @@
       align-items: center;
       justify-content: center;
     }
+
+    /* Pockets Section Styles */
+    .pockets-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .pocket-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .pocket-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .pocket-content {
+      padding: 1.5rem;
+      flex: 1;
+    }
+    .pocket-content h3 {
+      color: #333;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+    .pocket-content p {
+      color: #666;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .feature-grid, .pockets-grid {
+        grid-template-columns: 1fr;
+      }
+      .feature-image {
+        height: 250px;
+      }
+      .pocket-image {
+        height: 180px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -198,6 +245,66 @@
               <p>
                 Built with eco-friendly materials that don't compromise on performance. The tent fabric 
                 is made from recycled materials and treated with environmentally safe waterproofing agents.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-section">
+        <h2>Smart Storage Pockets</h2>
+        <div class="pockets-grid">
+          <div class="pocket-card">
+            <video autoplay muted loop class="pocket-image">
+              <source src="../resources/media/final/gear_shelf.MP4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="pocket-content">
+              <h3>Gear Shelf</h3>
+              <p>
+                A spacious overhead shelf perfect for storing larger items like headlamps, books, or extra clothing.
+                Keeps your gear organized and within easy reach.
+              </p>
+            </div>
+          </div>
+
+          <div class="pocket-card">
+            <img src="../resources/media/placeholder.jpeg" alt="Phone Pockets" class="pocket-image">
+            <div class="pocket-content">
+              <h3>Phone Pockets</h3>
+              <p>
+                Strategically placed mesh pockets designed to hold your phone securely while keeping it accessible.
+                Perfect for charging or quick access to your device.
+              </p>
+            </div>
+          </div>
+
+          <div class="pocket-card">
+            <video autoplay muted loop class="pocket-image" playsinline>
+              <source src="../resources/media/final/back_pockets.MOV" type="video/quicktime">
+              <source src="../resources/media/final/back_pockets.MOV" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="pocket-content">
+              <h3>Back Pockets</h3>
+              <p>
+                Deep, secure pockets along the back wall for storing valuables and personal items.
+                Keeps your belongings safe and out of the way.
+              </p>
+            </div>
+          </div>
+
+          <div class="pocket-card">
+            <video autoplay muted loop class="pocket-image" playsinline>
+              <source src="../resources/media/final/long_pockets.MOV" type="video/quicktime">
+              <source src="../resources/media/final/long_pockets.MOV" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="pocket-content">
+              <h3>Long Pockets</h3>
+              <p>
+                Vertical pockets perfect for storing longer items like trekking poles, water bottles,
+                or rolled-up clothing. Maximizes vertical space utilization.
               </p>
             </div>
           </div>
