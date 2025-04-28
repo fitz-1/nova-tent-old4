@@ -19,6 +19,7 @@
     font-family: 'Unbounded Black', sans-serif;
     font-weight: 900;
     height: 100%;
+    z-index: 1002;
 }
 
 .nav-logo {
@@ -162,6 +163,8 @@
     display: none;
     cursor: pointer;
     padding: 0.5rem;
+    margin-left: auto;
+    z-index: 1001;
 }
 
 .menu-btn span {
@@ -189,63 +192,33 @@
 @media (max-width: 768px) {
     .menu-btn {
         display: block;
+        position: relative;
     }
 
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 0;
         left: 0;
         right: 0;
         background-color: #fff;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 0.5rem;
-        margin: 0;
-        display: none;
+        align-items: center;
+        padding: 0.5rem 0;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        max-height: 50vh;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+        max-height: 40vh;
         overflow-y: auto;
     }
 
     .nav-links.active {
-        display: flex;
+        transform: translateY(70px);
     }
 
-    .nav-links li {
-        margin: 0.25rem 0;
-        width: 100%;
-    }
-
-    .nav-links a {
-        padding: 0.5rem;
-        width: 100%;
-        font-size: 0.9rem;
-    }
-
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        display: none;
-        margin-top: 0.25rem;
-        padding-left: 1rem;
-    }
-
-    .dropdown.active > .dropdown-menu {
-        display: block;
-    }
-
-    .iteration-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        display: none;
-        margin-top: 0.25rem;
-        padding-left: 1rem;
-    }
-
-    .iterations.active > .iteration-menu {
-        display: block;
+    .logo {
+        position: relative;
+        z-index: 1002;
     }
 
     .logo a {
@@ -260,20 +233,23 @@
 /* iPhone-specific adjustments */
 @media (max-width: 414px) {
     .navbar {
-        padding: 0.5rem;
+        padding: 0.75rem;
     }
 
     .logo a {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     .nav-logo {
-        height: 35px;
+        height: 40px;
     }
 
     .nav-links {
-        top: 60px;
-        padding: 0.25rem;
+        padding: 0.25rem 0;
+    }
+
+    .nav-links.active {
+        transform: translateY(60px);
     }
 
     .menu-btn span {
@@ -282,15 +258,19 @@
     }
 
     .nav-links li {
-        margin: 0.2rem 0;
+        margin: 0.25rem 0;
     }
 
     .nav-links a {
-        padding: 0.4rem;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+        padding: 0.4rem 1rem;
     }
 
     .dropdown-menu, .iteration-menu {
-        padding-left: 0.75rem;
+        position: static;
+        box-shadow: none;
+        width: 100%;
+        text-align: center;
+        padding-left: 0.5rem;
     }
 } 
