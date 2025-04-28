@@ -61,6 +61,12 @@ function loadNavbar() {
             dropdownLink.addEventListener('click', (e) => {
               if (window.innerWidth <= 768) {
                 e.preventDefault();
+                // Close other dropdowns
+                dropdowns.forEach(d => {
+                  if (d !== dropdown) {
+                    d.classList.remove('active');
+                  }
+                });
                 dropdown.classList.toggle('active');
               }
             });
@@ -69,6 +75,10 @@ function loadNavbar() {
             const dropdownItems = dropdown.querySelectorAll('.dropdown-menu a, .iteration-menu a');
             dropdownItems.forEach(item => {
               item.addEventListener('click', (e) => {
+                // Don't prevent default for actual links
+                if (!item.getAttribute('href') || item.getAttribute('href') === '#') {
+                  e.preventDefault();
+                }
                 // Close the mobile menu when a link is clicked
                 navLinks.classList.remove('active');
                 menuBtn.classList.remove('active');
