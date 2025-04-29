@@ -15,7 +15,7 @@
       padding: 6rem 2rem 0;
     }
     .container {
-        padding-top: 80px; /* Only if you don't want to affect the whole body */
+        padding-top: 80px;
     }
 
     .iteration-section {
@@ -38,12 +38,20 @@
     .iteration-card:hover {
       transform: translateY(-5px);
     }
+    .iteration-image-container {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+    }
     .iteration-card img {
       width: 100%;
-      height: auto;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
       padding: 1rem;
-      background: white;
     }
     .iteration-text {
       padding: 1.5rem;
@@ -64,16 +72,21 @@
       line-height: 1.6;
       flex: 1;
     }
+    .btn-container {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
     .btn {
       display: inline-block;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1.5rem;
       background: #333;
       color: white;
       text-decoration: none;
       border-radius: 4px;
       transition: background 0.3s;
-      margin-top: auto;
-      align-self: flex-start;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
     }
     .btn:hover {
       background: #555;
@@ -112,10 +125,10 @@
       }
       .iteration-section {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 1.5rem;
       }
-      .iteration-card img {
-        height: 250px;
+      .iteration-image-container {
+        height: 200px;
       }
       .iteration-text {
         padding: 1rem;
@@ -150,38 +163,54 @@
 
     <div class="iteration-section">
       <div class="iteration-card">
-        <img src="../resources/media/it1/it1-tent-from-back.JPG" alt="Iteration 1 - Initial Concept">
+        <div class="iteration-image-container">
+          <img src="../resources/media/it1/it1-tent-from-back.JPG" alt="Iteration 1 - Initial Concept">
+        </div>
         <div class="iteration-text">
           <h3>Iteration 1: Foundation</h3>
           <p>The first iteration focused on establishing the fundamental design principles and core functionality. We explored basic structure, initial material choices, and essential features that would define the Nova Tent.</p>
-          <a href="iteration1.html" class="btn">Explore Iteration 1</a>
+          <div class="btn-container">
+            <a href="iteration1.html" class="btn">Explore Iteration 1</a>
+          </div>
         </div>
       </div>
 
       <div class="iteration-card">
-        <img src="../resources/media/it2/it2-layindown.jpeg" alt="Iteration 2 - Design Refinement">
+        <div class="iteration-image-container">
+          <img src="../resources/media/it2/it2-layindown.jpeg" alt="Iteration 2 - Design Refinement">
+        </div>
         <div class="iteration-text">
           <h3>Iteration 2: Refinement</h3>
           <p>Developing digital patterns and bringing unique features to life.</p>
-          <a href="iteration2.html" class="btn">Explore Iteration 2</a>
+          <div class="btn-container">
+            <a href="iteration2.html" class="btn">Explore Iteration 2</a>
+          </div>
         </div>
       </div>
 
       <div class="iteration-card">
-        <img src="../resources/media/it3/lake-powell-red.JPG" alt="Iteration 3 - User Experience">
+        <div class="iteration-image-container">
+          <img src="../resources/media/it3/lake-powell-red.JPG" alt="Iteration 3 - User Experience">
+        </div>
         <div class="iteration-text">
           <h3>Iteration 3: User Experience</h3>
           <p>Refining design, features, and functionality.</p>
-          <a href="iteration3.html" class="btn">Explore Iteration 3</a>
+          <div class="btn-container">
+            <a href="iteration3.html" class="btn">Explore Iteration 3</a>
+          </div>
         </div>
       </div>
 
       <div class="iteration-card">
-        <img src="../resources/media/placeholder.jpeg" alt="Iteration 4 - Production Ready">
+        <div class="iteration-image-container">
+          <img src="../resources/media/it4/leftSide.JPG" alt="Iteration 4 - Production Ready">
+        </div>
         <div class="iteration-text">
           <h3>Iteration 4: Production Ready</h3>
           <p>Perfecting design and producing a polished product.</p>
-          <a href="iteration4.html" class="btn">Explore Iteration 4</a>
+          <div class="btn-container">
+            <a href="iteration4.html" class="btn">Explore Iteration 4</a>
+          </div>
         </div>
       </div>
     </div>
