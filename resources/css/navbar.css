@@ -195,7 +195,7 @@
         align-items: center;
         padding: 0.5rem 0;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        transform: translateY(-100%);
+        transform: translateY(-120%);
         transition: transform 0.3s ease;
         z-index: 1000;
         max-height: 100vh;
