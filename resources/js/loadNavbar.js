@@ -127,10 +127,9 @@ function initializeMobileMenu() {
           menu.style.opacity = dropdown.classList.contains('active') ? '1' : '0';
         }
       } else {
-        // On desktop
+        // On desktop, let the hover CSS handle the dropdown
         if (isIterations) {
-          // For iterations, let the link work normally
-          return;
+          return; // Let the link work normally
         }
         
         // For other dropdowns on desktop
